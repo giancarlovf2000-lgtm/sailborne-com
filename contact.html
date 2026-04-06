@@ -515,9 +515,16 @@
     </div>
   </footer>
 
+  <!-- Supabase JS client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="js/main.js"></script>
   <script>
-    /* Show/hide PR island destinations based on location selection */
+    /* ── Supabase client ──────────────────────────────── */
+    const SUPABASE_URL  = 'https://gmbmqcdcaskfvfmzhozn.supabase.co';
+    const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtYm1xY2RjYXNrZnZmbXpob3puIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0OTA2MzUsImV4cCI6MjA5MTA2NjYzNX0.CucPb21MdE_N56ArLHRC6S6xxcyojoJx948eDPWLbkc';
+    const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+    /* ── Show/hide PR island destinations ─────────────── */
     const locationSel = document.getElementById('contact-location');
     const prDestGroup = document.getElementById('pr-dest-group');
     if (locationSel && prDestGroup) {
@@ -527,7 +534,7 @@
       });
     }
 
-    /* Pre-fill vessel from URL param e.g. contact.html?vessel=Bertram+74 */
+    /* ── Pre-fill vessel from URL param ───────────────── */
     (function() {
       const params = new URLSearchParams(window.location.search);
       const vessel = params.get('vessel');
@@ -543,6 +550,60 @@
         }
       }
     })();
+
+    /* ── Real form submission → Supabase ──────────────── */
+    const bookingForm = document.getElementById('booking-form');
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = bookingForm.querySelector('[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending…';
+        submitBtn.disabled = true;
+
+        // Collect checkbox arrays
+        const prDests = [...bookingForm.querySelectorAll('input[name="pr_dest[]"]:checked')].map(el => el.value);
+        const addons  = [...bookingForm.querySelectorAll('input[name="addons[]"]:checked')].map(el => el.value);
+
+        const payload = {
+          first_name:     bookingForm.first_name.value.trim(),
+          last_name:      bookingForm.last_name.value.trim(),
+          email:          bookingForm.email.value.trim(),
+          phone:          bookingForm.phone.value.trim() || null,
+          inquiry_type:   bookingForm.inquiry_type.value || null,
+          location:       bookingForm.location.value || null,
+          vessel:         bookingForm.vessel.value || null,
+          duration:       bookingForm.duration.value || null,
+          preferred_date: bookingForm.date.value || null,
+          guests:         bookingForm.guests.value || null,
+          pr_destinations: prDests.length ? prDests : null,
+          addons:          addons.length ? addons : null,
+          message:         bookingForm.message.value.trim() || null,
+        };
+
+        const { error } = await db.from('bookings').insert(payload);
+
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+
+        if (error) {
+          alert('Something went wrong. Please email us directly at kristen@sailborne.co');
+          console.error(error);
+        } else {
+          bookingForm.reset();
+          if (prDestGroup) prDestGroup.style.display = 'none';
+          // Use the toast from main.js
+          const toastEvent = new CustomEvent('showToast', { detail: "Booking inquiry sent! We'll respond within 24 hours." });
+          document.dispatchEvent(toastEvent);
+          // Fallback direct toast
+          let toast = document.querySelector('.toast');
+          if (!toast) { toast = document.createElement('div'); toast.className = 'toast'; document.body.appendChild(toast); }
+          toast.textContent = "Booking inquiry sent! We'll respond within 24 hours.";
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 5000);
+        }
+      });
+    }
   </script>
 </body>
 </html>
