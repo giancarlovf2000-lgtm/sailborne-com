@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Book — SailBorne</title>
+  <meta name="description" content="Book a luxury yacht charter or start a creative project with SailBorne. Get in touch and we'll respond within 24 hours." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .form-checkboxes { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:8px; }
+    @media(max-width:480px){ .form-checkboxes { grid-template-columns:1fr; } }
+    .form-check { display:flex; align-items:center; gap:10px; cursor:pointer; padding:8px 12px; border-radius:10px; border:1.5px solid var(--blue-pale); background:var(--bg); transition:border-color .15s,background .15s; font-size:14px; color:var(--ink-mid); }
+    .form-check:hover { border-color:var(--blue); background:var(--blue-pale); }
+    .form-check input[type="checkbox"] { accent-color:var(--blue); width:16px; height:16px; flex-shrink:0; cursor:pointer; }
+    .form-check--tc { display:flex; align-items:flex-start; gap:10px; border:none; background:none; padding:0; font-size:14px; color:var(--ink-mid); }
+    .form-check--tc:hover { border:none; background:none; }
+    .form-check--tc input { margin-top:2px; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">Sail<span>Borne</span></a>
+        <div class="nav__links">
+          <a href="index.html"       class="nav__link">Home</a>
+          <a href="experiences.html" class="nav__link">Experiences</a>
+          <a href="studios.html"     class="nav__link">Studios</a>
+          <a href="contact.html"     class="nav__link active">Contact</a>
+        </div>
+        <div class="nav__actions">
+          <a href="contact.html" class="btn btn--primary btn--sm">Book Now</a>
+          <button class="nav__hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" aria-hidden="true">
+    <button class="nav__mobile-close" aria-label="Close menu">&#x2715;</button>
+    <a href="index.html"       class="nav__mobile-link">Home</a>
+    <a href="experiences.html" class="nav__mobile-link">Experiences</a>
+    <a href="studios.html"     class="nav__mobile-link">Studios</a>
+    <a href="contact.html"     class="nav__mobile-link">Contact</a>
+    <div class="nav__mobile-actions">
+      <a href="contact.html" class="btn btn--primary btn--lg">Book Now</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <header class="page-hero">
+      <div class="container">
+        <div class="page-hero__content">
+          <span class="eyebrow">Get in Touch</span>
+          <h1>Let's Plan Your<br>Next Adventure</h1>
+          <p>Whether you're booking a yacht charter or starting a creative project, we're here to help. Tell us about your vision and we'll make it happen.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTACT MAIN -->
+    <section class="section section--bg">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- LEFT: Info -->
+          <div data-reveal>
+            <div class="contact-info__card">
+              <span class="eyebrow">Contact Details</span>
+              <h2 class="heading-md" style="margin-bottom:24px;">We'd Love to Hear From You</h2>
+
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-info__label">Email</div>
+                  <div class="contact-info__value">
+                    <a href="mailto:kristen@sailborne.co" style="color:var(--blue);">kristen@sailborne.co</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-info__label">Phone</div>
+                  <div class="contact-info__value">
+                    <a href="tel:+12345678901" style="color:var(--blue);">+1 (234) 567-8901</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-info__label">Base Location</div>
+                  <div class="contact-info__value">Puerto Rico, USA</div>
+                </div>
+              </div>
+
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+                </div>
+                <div>
+                  <div class="contact-info__label">Response Time</div>
+                  <div class="contact-info__value">Within 24 hours</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Destination quick links -->
+            <div class="contact-info__card">
+              <span class="eyebrow">We Sail To</span>
+              <div class="dest-strip" style="margin-top:16px;">
+                <div class="dest-strip__item">
+                  <div class="dest-strip__flag">&#x1F1F5;&#x1F1F7;</div>
+                  <div class="dest-strip__name">Puerto Rico</div>
+                </div>
+                <div class="dest-strip__item">
+                  <div class="dest-strip__flag">&#x1F1FA;&#x1F1F8;</div>
+                  <div class="dest-strip__name">Miami</div>
+                </div>
+                <div class="dest-strip__item">
+                  <div class="dest-strip__flag">&#x1F1EC;&#x1F1F7;</div>
+                  <div class="dest-strip__name">Greece</div>
+                </div>
+                <div class="dest-strip__item">
+                  <div class="dest-strip__flag">&#x1F1E9;&#x1F1F4;</div>
+                  <div class="dest-strip__name">Punta Cana</div>
+                </div>
+                <div class="dest-strip__item">
+                  <div class="dest-strip__flag">&#x1F1FB;&#x1F1EC;</div>
+                  <div class="dest-strip__name">BVI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Booking Form -->
+          <div data-reveal data-reveal-delay="200">
+            <div class="form-card">
+              <h3 class="form-title">Book a Charter or Inquire</h3>
+              <p class="form-subtitle">Tell us about your plans and we'll craft a bespoke experience around your vision.</p>
+
+              <form data-form="booking" id="booking-form">
+
+                <!-- Name -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-first">First Name</label>
+                    <input class="form-input" type="text" id="contact-first" name="first_name" placeholder="First name" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contact-last">Last Name</label>
+                    <input class="form-input" type="text" id="contact-last" name="last_name" placeholder="Last name" required />
+                  </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-email">Email Address</label>
+                    <input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contact-phone">Phone Number</label>
+                    <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="+1 (000) 000-0000" />
+                  </div>
+                </div>
+
+                <!-- Inquiry Type -->
+                <div class="form-group">
+                  <label class="form-label" for="contact-inquiry">Inquiry Type</label>
+                  <select class="form-select" id="contact-inquiry" name="inquiry_type">
+                    <option value="">What can we help you with?</option>
+                    <optgroup label="Charter Bookings">
+                      <option value="charter">Charter Booking</option>
+                      <option value="floating">Floating Experience (La Parguera)</option>
+                    </optgroup>
+                    <optgroup label="Studio Services">
+                      <option value="branding">Branding &amp; Design</option>
+                      <option value="photo">Photography &amp; Videography</option>
+                      <option value="3d">3D Animation &amp; Rendering</option>
+                      <option value="website">Website Creation</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                      <option value="general">General Inquiry</option>
+                      <option value="partnership">Partnership Opportunity</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                <!-- Location -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-location">Location</label>
+                    <select class="form-select" id="contact-location" name="location">
+                      <option value="">Select location…</option>
+                      <option value="Puerto Rico - Fajardo">Puerto Rico — Fajardo</option>
+                      <option value="Puerto Rico - La Parguera">Puerto Rico — La Parguera</option>
+                      <option value="Miami">Miami, Florida</option>
+                      <option value="Greece">Greece — Mediterranean</option>
+                      <option value="Multiple">Multiple Locations</option>
+                      <option value="Other">Not Sure Yet</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contact-vessel">Preferred Vessel</label>
+                    <select class="form-select" id="contact-vessel" name="vessel">
+                      <option value="">Select vessel…</option>
+                      <optgroup label="Puerto Rico — Fajardo">
+                        <option>Bertram 74</option>
+                        <option>Predator 82 Paradis</option>
+                        <option>Azimuth 68 Evolution Paradis</option>
+                        <option>Neptunos 60</option>
+                        <option>Princess 58 Paradis</option>
+                        <option>Sunseeker 60 Paradis</option>
+                        <option>Fairline 65</option>
+                        <option>Sea Ray 42 (PR)</option>
+                        <option>Tiara 45</option>
+                        <option>Grady White 35</option>
+                        <option>Cruiser 36</option>
+                        <option>Sea Fox 36 Paradis</option>
+                        <option>Wellcraft 30</option>
+                        <option>Boston Whaler 28 Paradis</option>
+                      </optgroup>
+                      <optgroup label="Puerto Rico — La Parguera">
+                        <option>La Barra Salada II</option>
+                        <option>La Rumba Salada</option>
+                        <option>El Paraíso Salado</option>
+                        <option>La Barra Salada</option>
+                        <option>La Mesa Salada</option>
+                      </optgroup>
+                      <optgroup label="Miami, Florida">
+                        <option>Azimut 100</option>
+                        <option>Princess 62</option>
+                        <option>Azimut 60 Miami</option>
+                        <option>Azimut 60 Sport</option>
+                        <option>Maxum 50 Paradis</option>
+                        <option>Maxum 45</option>
+                        <option>Sea Ray 37 Miami</option>
+                        <option>Sea Ray 42 (Miami)</option>
+                      </optgroup>
+                      <optgroup label="Greece">
+                        <option>Lagoon 51 Kentavros</option>
+                        <option>Lagoon 50 Icarus</option>
+                        <option>Bali 4.8 Romar III</option>
+                        <option>Lagoon 50 Orion</option>
+                        <option>Bali 4.6 Enma</option>
+                      </optgroup>
+                      <option value="No preference">No Preference / Help Me Choose</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Trip Duration & Date -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-duration">Trip Duration</label>
+                    <select class="form-select" id="contact-duration" name="duration">
+                      <option value="">Select duration…</option>
+                      <option>Half-Day (4 hrs)</option>
+                      <option>Full-Day (7–8 hrs)</option>
+                      <option>Overnight</option>
+                      <option>Multi-Day</option>
+                      <option>Weekly (Greece)</option>
+                      <option>Floating Experience</option>
+                      <option>Not Sure</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contact-date">Preferred Date</label>
+                    <input class="form-input" type="date" id="contact-date" name="date" />
+                  </div>
+                </div>
+
+                <!-- Guests -->
+                <div class="form-group">
+                  <label class="form-label" for="contact-guests">Number of Guests</label>
+                  <select class="form-select" id="contact-guests" name="guests">
+                    <option value="">Select guest count…</option>
+                    <option>1–4 guests</option>
+                    <option>5–8 guests</option>
+                    <option>9–12 guests</option>
+                    <option>13–16 guests</option>
+                    <option>17–20 guests</option>
+                    <option>20–30 guests</option>
+                    <option>30–50 guests</option>
+                    <option>50+ guests</option>
+                  </select>
+                </div>
+
+                <!-- PR Island Destinations (shown for PR locations) -->
+                <div class="form-group" id="pr-dest-group" style="display:none;">
+                  <label class="form-label">Puerto Rico Island Destinations</label>
+                  <div class="form-checkboxes">
+                    <label class="form-check"><input type="checkbox" name="pr_dest[]" value="Palomino Island" /><span>Palomino Island</span></label>
+                    <label class="form-check"><input type="checkbox" name="pr_dest[]" value="Icacos Island" /><span>Icacos Island</span></label>
+                    <label class="form-check"><input type="checkbox" name="pr_dest[]" value="Vieques" /><span>Vieques</span></label>
+                    <label class="form-check"><input type="checkbox" name="pr_dest[]" value="Culebra" /><span>Culebra</span></label>
+                    <label class="form-check"><input type="checkbox" name="pr_dest[]" value="Isla de Ramos" /><span>Isla de Ramos</span></label>
+                    <label class="form-check"><input type="checkbox" name="pr_dest[]" value="La Parguera Bioluminescent Bay" /><span>Bioluminescent Bay</span></label>
+                    <label class="form-check"><input type="checkbox" name="pr_dest[]" value="Custom" /><span>Custom / Flexible</span></label>
+                  </div>
+                </div>
+
+                <!-- Add-On Services -->
+                <div class="form-group">
+                  <label class="form-label">Add-On Services</label>
+                  <div class="form-checkboxes">
+                    <label class="form-check"><input type="checkbox" name="addons[]" value="Private Chef" /><span>Private Chef</span></label>
+                    <label class="form-check"><input type="checkbox" name="addons[]" value="Jet Ski Rental" /><span>Jet Ski Rental</span></label>
+                    <label class="form-check"><input type="checkbox" name="addons[]" value="Seabobs" /><span>Seabobs</span></label>
+                    <label class="form-check"><input type="checkbox" name="addons[]" value="Snorkeling Gear" /><span>Snorkeling Gear</span></label>
+                    <label class="form-check"><input type="checkbox" name="addons[]" value="Transport to Marina" /><span>Transport to Marina</span></label>
+                    <label class="form-check"><input type="checkbox" name="addons[]" value="Event Décor" /><span>Event Décor</span></label>
+                    <label class="form-check"><input type="checkbox" name="addons[]" value="Photography & Videography" /><span>Photography &amp; Videography</span></label>
+                    <label class="form-check"><input type="checkbox" name="addons[]" value="Proposal Package" /><span>Proposal Package</span></label>
+                  </div>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="form-group">
+                  <label class="form-label" for="contact-message">Special Requests</label>
+                  <textarea class="form-textarea" id="contact-message" name="message" placeholder="Occasion, dietary preferences, accessibility needs, or anything else we should know…" rows="4"></textarea>
+                </div>
+
+                <!-- T&C -->
+                <div class="form-group">
+                  <label class="form-check form-check--tc">
+                    <input type="checkbox" name="terms" required />
+                    <span>I agree to the <a href="terms.html" target="_blank" style="color:var(--blue);">Terms &amp; Conditions</a> and cancellation policy</span>
+                  </label>
+                </div>
+
+                <button type="submit" class="btn btn--primary form-submit btn--lg">Send Booking Inquiry &#x2192;</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--bg-alt" id="faq">
+      <div class="container container--narrow">
+        <div class="section__header" data-reveal>
+          <span class="eyebrow">Common Questions</span>
+          <h2 class="heading-xl">Frequently Asked Questions</h2>
+          <p>Everything you need to know before booking your SailBorne experience.</p>
+        </div>
+
+        <div class="faq-list" data-reveal>
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              How far in advance should I book?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              We recommend booking at least 2–4 weeks in advance, especially for peak season (December–April in the Caribbean) and for larger groups or special events. That said, last-minute bookings may be available — contact us and we'll do our best to accommodate you.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              What is the payment and deposit policy?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              A 50% deposit is required to secure your charter date. The remaining balance is due 7 days before your departure. We accept major credit cards, bank transfer, and select digital payment methods.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              What is the cancellation policy?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Cancellations made 7 or more days before the charter receive a full refund. Cancellations 3–6 days prior receive a 50% refund. Cancellations under 48 hours are non-refundable. In the event of unsafe weather or conditions, the captain may cancel and we will work to fully reschedule your charter.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              What's included in the charter price?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              All charters include a licensed captain, dedicated crew, safety equipment, snorkeling gear, a premium sound system, complimentary beverages, and a personalized itinerary. Add-ons such as a private chef, jet skis, photography, or event décor are available at additional cost.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Can I customize my charter itinerary?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Absolutely — customization is what we do best. Tell us your preferred stops, activities, dining preferences, and any special occasions. Our team will build a personalized itinerary just for you, subject to weather and local conditions.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Are food and alcohol provided?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Complimentary soft drinks and water are included in all charters. Guests are welcome to bring their own food and alcohol aboard. For full catering with a gourmet dining experience, add our Private Chef service. Full-day and overnight charters include expanded dining options.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Is SailBorne also a creative agency?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes! SailBorne Studios is our full-service creative agency arm, offering branding &amp; design, photography &amp; videography, 3D animation &amp; rendering, and website creation for luxury brands and businesses. Visit our Studios page to learn more or submit a project inquiry.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              Do you offer multi-day or destination charters?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes, we offer overnight and multi-day charters to destinations including Puerto Rico, Miami, Greece, Punta Cana, and the British Virgin Islands. For longer voyages, we work with you to plan every detail including ports of call, dining, and accommodation on board.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-banner__content" data-reveal>
+          <span class="eyebrow">Still Have Questions?</span>
+          <h2>We're Here to Help</h2>
+          <p>Call us, email us, or reach out on social media. Our team is available 7 days a week to answer your questions and help plan your perfect experience.</p>
+          <div class="cta-banner__actions">
+            <a href="mailto:kristen@sailborne.co" class="btn btn--primary btn--lg" style="background:#fff;color:var(--blue);">Email Us</a>
+            <a href="tel:+12345678901" class="btn btn--outline-white btn--lg">Call Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="footer__logo">Sail<span>Borne</span></a>
+          <p class="footer__tagline">Luxury yacht charters and creative studio services across the Caribbean and beyond.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social" aria-label="Instagram"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" class="footer__social" aria-label="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Company</div>
+          <div class="footer__links">
+            <a href="index.html"       class="footer__link">Home</a>
+            <a href="experiences.html" class="footer__link">Experiences</a>
+            <a href="studios.html"     class="footer__link">Studios</a>
+            <a href="contact.html"     class="footer__link">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Quick Links</div>
+          <div class="footer__links">
+            <a href="experiences.html" class="footer__link">Charter Experiences</a>
+            <a href="studios.html"     class="footer__link">Studio Services</a>
+            <a href="terms.html"       class="footer__link">Terms &amp; Policies</a>
+            <a href="#faq"             class="footer__link">FAQs</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:kristen@sailborne.co" class="footer__link">kristen@sailborne.co</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:+12345678901" class="footer__link">+1 (234) 567-8901</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 SailBorne. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="terms.html" class="footer__bottom-link">Terms</a>
+          <a href="terms.html" class="footer__bottom-link">Privacy</a>
+          <a href="terms.html" class="footer__bottom-link">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* Show/hide PR island destinations based on location selection */
+    const locationSel = document.getElementById('contact-location');
+    const prDestGroup = document.getElementById('pr-dest-group');
+    if (locationSel && prDestGroup) {
+      locationSel.addEventListener('change', () => {
+        const isPR = locationSel.value.startsWith('Puerto Rico');
+        prDestGroup.style.display = isPR ? 'block' : 'none';
+      });
+    }
+
+    /* Pre-fill vessel from URL param e.g. contact.html?vessel=Bertram+74 */
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const vessel = params.get('vessel');
+      if (vessel) {
+        const sel = document.getElementById('contact-vessel');
+        if (sel) {
+          for (let i = 0; i < sel.options.length; i++) {
+            if (sel.options[i].value === vessel || sel.options[i].text === vessel) {
+              sel.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
