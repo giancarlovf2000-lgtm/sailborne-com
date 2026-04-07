@@ -5,7 +5,7 @@ import CtaBanner from '@/components/home/CtaBanner'
 
 export const metadata: Metadata = {
   title: 'Experiences — SailBorne Luxury Yacht Charters',
-  description: 'Browse our full fleet of luxury yachts available in Puerto Rico, Miami, and Greece. Find the perfect vessel for your charter.',
+  description: 'Browse our full fleet of luxury yachts available in Puerto Rico, Miami, and Greece.',
 }
 
 export default async function ExperiencesPage() {
@@ -18,14 +18,12 @@ export default async function ExperiencesPage() {
 
   return (
     <main>
-      <section className="page-hero section" aria-label="Experiences hero">
+      <section className="page-hero">
         <div className="container">
           <div className="page-hero__content">
-            <p className="section__label">Our Fleet</p>
-            <h1 className="page-hero__title">Charter Experiences</h1>
-            <p className="page-hero__subtitle">
-              From intimate day sails to week-long expeditions — explore our curated fleet of world-class vessels across three stunning destinations.
-            </p>
+            <span className="eyebrow">Our Fleet</span>
+            <h1>Charter Experiences</h1>
+            <p>From intimate day sails to week-long expeditions — explore our curated fleet of world-class vessels across three stunning destinations.</p>
           </div>
         </div>
       </section>

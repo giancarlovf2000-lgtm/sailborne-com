@@ -9,19 +9,17 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <section className="page-hero section" aria-label="Contact hero">
+      <section className="page-hero">
         <div className="container">
           <div className="page-hero__content">
-            <p className="section__label">Get in Touch</p>
-            <h1 className="page-hero__title">Book Your Charter</h1>
-            <p className="page-hero__subtitle">
-              Tell us about your dream voyage and we&apos;ll craft a personalized proposal within 24 hours. No commitment required.
-            </p>
+            <span className="eyebrow">Get in Touch</span>
+            <h1>Book Your Charter</h1>
+            <p>Tell us about your dream voyage and we&apos;ll craft a personalized proposal within 24 hours. No commitment required.</p>
           </div>
         </div>
       </section>
 
-      <section className="contact section" aria-label="Contact form">
+      <section className="section section--bg">
         <div className="container">
           <div className="contact__layout">
             <aside className="contact__sidebar">
@@ -39,7 +37,6 @@ export default function ContactPage() {
                   </svg>
                   <a href="tel:+12345678901">+1 (234) 567-8901</a>
                 </div>
-
                 <div className="contact__destinations">
                   <h3 className="contact__destinations-title">Destinations</h3>
                   <ul className="contact__destinations-list">
@@ -48,22 +45,21 @@ export default function ContactPage() {
                     <li>⛵ Greece — Aegean &amp; Ionian</li>
                   </ul>
                 </div>
-
                 <div className="contact__promise">
                   <div className="contact__promise-item">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     <span>24-hour response guarantee</span>
                   </div>
                   <div className="contact__promise-item">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     <span>No commitment required</span>
                   </div>
                   <div className="contact__promise-item">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     <span>Fully customized proposals</span>
@@ -71,7 +67,6 @@ export default function ContactPage() {
                 </div>
               </div>
             </aside>
-
             <div className="contact__form-wrap">
               <BookingForm />
             </div>

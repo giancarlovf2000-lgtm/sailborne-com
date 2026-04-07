@@ -7,13 +7,13 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="stats section--sm" aria-label="Statistics">
+    <section className="section section--white" aria-label="Statistics">
       <div className="container">
-        <div className="stats__grid">
+        <div className="stats-row" style={{ justifyContent: 'center', gap: '80px' }}>
           {stats.map(s => (
-            <div key={s.label} className="stats__item">
-              <span className="stats__value">{s.value}</span>
-              <span className="stats__label">{s.label}</span>
+            <div key={s.label} style={{ textAlign: 'center' }}>
+              <div className="stat__number">{s.value}</div>
+              <div className="stat__label">{s.label}</div>
             </div>
           ))}
         </div>

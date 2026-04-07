@@ -10,8 +10,8 @@ interface FleetSectionProps {
 
 const TABS = [
   { key: 'all',      label: 'All Vessels' },
-  { key: 'fajardo',  label: 'Puerto Rico — Fajardo' },
-  { key: 'parguera', label: 'Puerto Rico — La Parguera' },
+  { key: 'fajardo',  label: 'Fajardo, PR' },
+  { key: 'parguera', label: 'La Parguera, PR' },
   { key: 'miami',    label: 'Miami' },
   { key: 'greece',   label: 'Greece' },
 ]
@@ -24,35 +24,32 @@ export default function FleetSection({ vessels }: FleetSectionProps) {
     : vessels.filter(v => v.destination === active)
 
   return (
-    <section className="fleet section" id="fleet">
+    <section className="section section--bg" id="fleet">
       <div className="container">
-        <div className="section__header">
-          <p className="section__label">Our Fleet</p>
-          <h2 className="section__title">Choose Your Vessel</h2>
-          <p className="section__subtitle">World-class yachts curated for every occasion — from intimate sunset sails to week-long expeditions.</p>
-        </div>
-
-        <div className="fleet__tabs" role="tablist">
-          {TABS.map(tab => (
-            <button
-              key={tab.key}
-              role="tab"
-              aria-selected={active === tab.key}
-              className={`fleet__tab${active === tab.key ? ' active' : ''}`}
-              onClick={() => setActive(tab.key)}
-            >
-              {tab.label}
-              <span className="fleet__tab-count">
-                {tab.key === 'all' ? vessels.length : vessels.filter(v => v.destination === tab.key).length}
-              </span>
-            </button>
-          ))}
+        <div className="fleet-tabs">
+          {TABS.map(tab => {
+            const count = tab.key === 'all' ? vessels.length : vessels.filter(v => v.destination === tab.key).length
+            return (
+              <button
+                key={tab.key}
+                role="tab"
+                aria-selected={active === tab.key}
+                className={`fleet-tab${active === tab.key ? ' active' : ''}`}
+                onClick={() => setActive(tab.key)}
+              >
+                {tab.label}
+                <span className="fleet-tab__count">{count}</span>
+              </button>
+            )
+          })}
         </div>
 
         {filtered.length === 0 ? (
-          <p className="fleet__empty">No vessels available for this destination. <a href="/contact">Contact us</a> for custom arrangements.</p>
+          <p style={{ textAlign: 'center', padding: '80px 0', color: 'var(--ink-muted)' }}>
+            No vessels available for this destination. <a href="/contact" style={{ color: 'var(--blue)' }}>Contact us</a> for custom arrangements.
+          </p>
         ) : (
-          <div className="fleet__grid">
+          <div className="fleet-grid">
             {filtered.map(vessel => (
               <VesselCard key={vessel.id} vessel={vessel} />
             ))}

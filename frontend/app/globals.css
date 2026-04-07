@@ -738,6 +738,51 @@ input, textarea, select { font-family: inherit; }
 }
 
 /* ============================================================
+   FLEET TABS
+   ============================================================ */
+.fleet-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1.5px solid var(--blue-pale);
+}
+.fleet-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: var(--radius-btn);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-mid);
+  background: transparent;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.fleet-tab:hover { color: var(--blue); border-color: var(--blue-pale); background: var(--blue-pale); }
+.fleet-tab.active { color: var(--blue); background: var(--blue-pale); border-color: var(--blue); }
+.fleet-tab__count {
+  background: var(--blue);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+.fleet-tab:not(.active) .fleet-tab__count { background: var(--gray-light); color: var(--ink-muted); }
+
+/* dest-card needs relative positioning for next/image fill */
+.dest-card { position: relative; }
+
+/* ============================================================
    FLEET
    ============================================================ */
 .fleet-grid {
